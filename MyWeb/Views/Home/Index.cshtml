@@ -1,0 +1,435 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <link href="~/lib/aifang/bootstrap.min.css" rel="stylesheet">
+    <link href="~/lib/aifang/component.css" rel="stylesheet">
+    <link href="~/lib/aifang/owlCarousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/aifang/swiper.css">
+    <link href="~/lib/aifang/style.css" rel="stylesheet">
+    <link href="~/lib/aifang/list.css" rel="stylesheet">
+    <link href="~/lib/aifang/baguetteBox.css" rel="stylesheet">
+    @*<script charset="utf-8" src="~/lib/aifang/b.js"></script>
+        <script charset="utf-8" src="~/lib/aifang/v.js"></script>*@
+    @*<script src="~/lib/aifang/hm.js"></script>*@
+    <script src="~/lib/aifang/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#keywords").click(function () {
+         
+                readyData();
+            });
+            readyData();
+        });
+    
+        function readyData() {
+            var saveData = {
+                Keywords: $("#keywordssss").val(),
+                offset: $("#indexPage").text(),
+            }
+            $.ajax({
+                type: "Get",
+                url: "/Picture/PageList",
+                contentType: "application/json; charset=utf-8", //必须有
+                dataType: "json", //表示返回值类型，不必须
+                data: saveData,
+                success: function (data) {
+                    refresh(data);
+                },
+                error: function () {
+                }
+            });
+        }
+
+        function refresh(data) {
+            var rowcount = data.rows;
+            $("#infoid").empty();
+            var strhtml ="";
+            for (var i = 0; i < rowcount.length; i++) {
+                strhtml += '<li class="tr li'+i+'">';
+                strhtml += '<div class="box">';
+                strhtml += ' <div class="imgbox"> <a href="#"> <span class="tr" style="background:url(Files/Pictures/' + rowcount[i].url  +') 50% 50%; background-size:cover;"></span> </a> </div>';
+                strhtml += ' <div class="textbox"';
+                strhtml += ' <h5 class="clearfix" > <a href="#" class="biaoti">' + rowcount[i].sellingPoint +'&nbsp;&nbsp;</a> <span class="pull-right">' + rowcount[i].price +' <i>元/m2</i></span> </h5>';
+                strhtml += '<p class="hidden-xs"> 项目地址：' + rowcount[i].address +' </p>';
+                strhtml += '<p class="hidden-xs"> 户型: ' + rowcount[i].apartment+'</p>';
+                strhtml += '<p class="hidden-xs"> 总价： ' + rowcount[i].allPrice +'/万</p>';
+                strhtml += ' <p class="clearfix lijiyuyue">交房时间： ' + rowcount[i].makeRoomTime + ' <!--<span>售楼电话：<i>0512-68832207</i></span>--> <a href="Home/Detail?UserInfoId=' + rowcount[i].id+'" class="tr">立即查看</a> </p>';
+                strhtml += '</div ></div > </li >';
+            }
+            $("#infoid").append(strhtml);
+           
+            $("#indexPage").text(data.index);
+            $("#countpage").text(data.total);
+            
+        }
+        function nextInfo(num) {
+            var indexPageData= $("#indexPage").text();
+            if (num = 0) {
+                $("#indexPage").text(indexPageData - 1);
+            }
+            else
+            {
+                $("#indexPage").text(indexPageData+1);
+              
+            }
+        }
+
+
+    </script>
+
+</head>
+<body class="hover">
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="menu clearfix">
+                        <div class="logo pull-left"><a href="http://www.lianjia-w.com/index.asp"></a></div>
+                        <div class="chengshi pull-left">
+                            <div class="chengshi-btn">
+                                <h4 class="tr">
+                                    <span class="hidden-md hidden-lg tr active"></span>
+                                    不限
+
+                                </h4>
+                                <h6 class="hidden-xs hidden-sm">更换城市</h6>
+                                <div class="gohome"><a href="http://www.lianjia-w.com/index.php">
+
+    <img src="~/lib/aifang/ny-banner_02.jpg" alt="">
+</a></div>
+                            </div>
+                            <div class="chengshi-box">
+                                <h6>热门城市</h6>
+                                <p>
+
+
+                                </p>
+                            </div>
+                        </div>
+                        <nav class="pull-right">
+                            <ul class="list-unstyled no-margin">
+                                <li class="pull-left  li0"><a href="http://www.lianjia-w.com/index.asp" class="tr text-center">首页<span>HOME</span></a></li>
+                                <li class="pull-left active li1"><a href="http://www.lianjia-w.com/xf.asp" class="tr text-center">新房<span>PROJECT</span></a></li>
+                                <li class="pull-left  li2"><a href="http://www.lianjia-w.com/kft.asp" class="tr text-center">看房团<span>GROUP</span></a></li>
+                                <li class="pull-left  li3"><a href="http://www.lianjia-w.com/about.asp" class="tr text-center">关于我们<span>ABOUT</span></a></li>
+                                <li class="pull-left  li4"><a href="http://www.lianjia-w.com/message.asp" class="tr text-center">在线留言<span>MESSAGE</span></a></li>
+                            </ul>
+                        </nav>
+                        <div class="ydd_btn pull-right hidden-md hidden-lg">
+                            <span class="tr pull-left s1"></span>
+                            <span class="tr pull-left s2"></span>
+                            <span class="tr pull-left s3"></span>
+                            <span class="tr pull-left s4"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <a name="cases"></a>
+    <div class="banner active">
+        <div id="myCarousel" data-ride="carousel" data-interval="3000" class="carousel slide">
+            <span class="tr" style="background:url(~/lib/aifang/admin/uploadpic/123.jpg) 50% 50%; background-size:cover;"></span>
+            <div class="carousel-inner">
+                <div class="item active" style="background:url(lib/aifang/ny-banner_02.jpg) 50% 50%; background-size:cover;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12 clearfix">
+                                <div class="search pull-right">
+                                    <form method="get" action="/Home/Search" class="clearfix">
+                                        <img src="" />
+                                        <input type="text" placeholder="请输入关键词" name="keywords" id="keywordssss" />
+                                        <button type="button" class="tr" id="keywords">开始搜房</button>
+                                    </form>
+                                </div>
+                                <div class="biaoyu pull-right"> 现房热销<span class="text-uppercase">New home sales</span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="content active">
+        <div class="container-fluid box-container-fluid">
+            <div class="row box-row">
+                <div class="col-xs-12 box-col-xs-12">
+                    <div class="title6">
+                        <p class="no-margin">当前位置：<a href="#" class="tr">首页</a> &gt; 新房</p>
+                    </div>
+                    <div class="text3 mar bor">
+                        <h5 class="no-margin"><span>按区域查询</span></h5>
+                        <ul class="list-unstyled no-margin">
+                            <li class="li0">
+                                <span class="text-center">区域：</span>
+                                <a href="#" class="tr pull-left"><small>不限</small></a>
+
+                                <a href="#">苏州</a>
+
+                                <a href="#">上海</a>
+
+                                <a href="#">嘉兴</a>
+
+                                <a href="#">太仓</a>
+
+                                <a href="#">南通</a>
+
+                                <a href="#">昆山</a>
+
+                                <a href="#">张家港</a>
+
+                                <a href="#">无锡市</a>
+
+                                <a href="#">宜兴市</a>
+
+                                <a href="#">靖江市</a>
+
+                                <a href="#">湖州市</a>
+
+                                <a href="#">嘉兴市</a>
+
+                                <a href="#">江阴</a>
+
+                                <a href="#">常州</a>
+
+
+                            </li>
+
+                            <li class="li1">
+                                <span class="text-center">特色：</span>
+                                <a href="#" class="tr pull-left"><small>不限</small></a>
+
+                                <a href="#">地铁沿线</a>
+
+                                <a href="#">经济住宅</a>
+
+                                <a href="#">学校周边</a>
+
+                                <a href="#">送户口</a>
+
+                                <a href="#">总价低</a>
+
+                                <a href="#">商住两用</a>
+
+                                <a href="#">精装修</a>
+
+                                <a href="#">湖景房</a>
+
+                            </li>
+                            <li class="li2">
+                                <span class="text-center">类型：</span>
+                                <a href="#" class="tr pull-left"><small>不限</small></a>
+
+                                <a href="#">普通住宅</a>
+
+                                <a href="#">酒店式公寓</a>
+
+                                <a href="#">办公楼</a>
+
+                                <a href="#">别墅</a>
+
+                                <a href="#">复式</a>
+
+                                <a href="#">商铺</a>
+
+                                <a href="#">别墅/小高层</a>
+
+                                <a href="#">住宅/别墅/商铺</a>
+
+                                <a href="#">花园洋房</a>
+
+                                <a href="#">别墅/住宅</a>
+
+                                <a href="#">公寓/商铺</a>
+
+                                <a href="#">复式/大平层/别墅</a>
+
+                                <a href="#">花园洋房/小高层</a>
+
+                            </li>
+                            <li class="li3">
+                                <span class="text-center">均价：</span>
+
+                                <a href="#" class="tr pull-left"><small>不限</small></a>
+                                <a href="#">1万以下</a>
+                                <a href="#">1~2万</a>
+                                <a href="#">2~3万</a>
+                                <a href="#">3~5万</a>
+                                <a href="#">5~8万</a>
+                                <a href="#">8万以上</a>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid box-container-fluid-2">
+            <div class="row box-row-2">
+                <div class="col-md-9 box-col-md-9-2">
+                    <div class="mar bor">
+                        <div class="pictrue7 active">
+
+                            <ul class="list-unstyled no-margin" id="infoid"></ul>
+
+                            <div style="text-align:center; width:100%">
+                                <div class="diy_page">
+                                    <a href="javascript:void(0);" onclick="nextInfo(0)" class="p_n">上一页</a>&nbsp;
+                                    <a href="javascript:void(0);" onclick="nextInfo(1)" class="p_n">下一页</a>&nbsp;
+                                    @*<a href="http://www.lianjia-w.com/xf.asp?page=5" class="p_n">尾页</a>*@
+                                    <span disabled="">第<span style="color:#F00" id="indexPage">1</span>页, 共<span style="color:#F00" id="countpage">0</span>条信息</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 box-col-md-3-2 hidden-xs hidden-sm">
+                    <div class="bor mar">
+                        <div class="title13 clearfix">
+                            <h5 class="no-margin pull-left" style="background-image:url(images/icon/title13_icon2.png)">看房团</h5>
+                            <h6 class="no-margin pull-right">团购促销<a href="#" class="tr">查看更多&gt;&gt;</a></h6>
+                        </div>
+                        <div class="pictrue31">
+                            <ul class="list-unstyled no-margin clearfix"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="neirong clearfix">
+                        <div class="left pull-left">
+                            <h5>关于我们</h5>
+                            <p>
+                            </p><h4>
+                                <span style="font-family:SimHei;font-size:24px;">
+                                    <strong>
+                                        <span style="font-size:18px;">
+                                            <span style="font-family:SimSun;"><span style="color:#FFFFFF;"></span><span style="color:#FFFFFF;">一对一为您服务！</span></span><br>
+                                        </span>
+                                    </strong>
+                                </span><span style="font-family:SimHei;font-size:24px;">
+                                    <strong>
+                                        <span style="font-size:18px;">
+                                            <span style="font-family:SimSun;color:#FFFFFF;"> 信息全面：为您推荐适合您的优质房源；</span><br>
+                                        </span>
+                                    </strong>
+                                </span><span style="font-family:SimHei;font-size:24px;">
+                                    <strong>
+                                        <span style="font-size:18px;">
+                                            <span style="font-family:SimSun;color:#FFFFFF;"> 找房方便：为您采集最新信息，在家就能看房；</span><br>
+                                        </span>
+                                    </strong>
+                                </span><span style="font-family:SimHei;font-size:24px;">
+                                    <strong>
+                                        <span style="font-size:18px;">
+                                            <span style="font-family:SimSun;color:#FFFFFF;"> 咨询专业：即时在线咨询，有事您说话；</span><br>
+                                        </span>
+                                    </strong>
+                                </span><span style="font-family:SimHei;font-size:24px;">
+                                    <strong>
+                                        <span style="font-size:18px;">
+                                            <span style="font-family:SimSun;color:#FFFFFF;">优势：</span><br>
+                                        </span>
+                                    </strong>
+                                </span><span style="font-family:SimHei;font-size:24px;">
+                                    <strong>
+                                        <span style="font-size:18px;">
+                                            <span style="font-family:SimSun;color:#FFFFFF;"> 时刻为您着想，为您找到心仪的房源，专业解答您的问题，一站式为您服务。</span><br>
+                                        </span>
+                                    </strong>
+                                </span><span style="font-family:SimSun;font-size:24px;"><strong><span style="font-size:18px;font-family:SimSun;"><span style="color:#FFFFFF;"> 我们的服务,您家庭的港湾！</span><span style="color:#FFFFFF;"></span></span></strong></span>
+                            </h4>
+                            <p>
+                                <br>
+                            </p>
+                            <p>
+                                <span style="font-size:14px;"></span><span style="font-size:16px;"></span><span style="font-size:14px;"></span><br>
+                                <span style="font-size:14px;"></span><br>
+                                <span style="font-size:14px;"></span><br>
+                                <span style="font-size:14px;"></span>
+                            </p>
+                            <p></p>
+                            <h6>——开启您的房产置业之旅！</h6>
+                        </div>
+                        <div class="zhong pull-left">
+                            <div class="box">
+                                <h5>服务热线</h5>
+                                <h4>400-060-1508</h4>
+                                <p>
+                                    周一至周日 9:00 - 21:00<br>
+                                    法定节假日除外 <br>
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="right pull-left">
+                            <div class="box">
+                                <h5>扫一扫</h5>
+                                <div class="ewm clearfix">
+                                    <div class="ewms pull-left text-center">
+                                        <img src="~/lib/aifang/ewm2.jpg" alt="">
+                                        <h6>关注微信公众号</h6>
+                                    </div>
+                                    <div class="ewms pull-left text-center">
+                                        <img src="~/lib/aifang/ewm3.jpg" alt="">
+                                        <h6>关注移动官网</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <nav class="text-center">
+                            <ul class="list-unstyled no-margin clearfix">
+                                <li class="li0"><a href="#" class="tr">首页</a></li>
+                                <li class="li1"><a href="#" class="tr">新房</a></li>
+                                <li class="li2"><a href="#" class="tr">看房团</a></li>
+                                <li class="li3"><a href="#" class="tr">关于我们</a></li>
+                                <li class="li4"><a href="#" class="tr">在线留言</a></li>
+                            </ul>
+                        </nav>
+                        <p class="p1 text-center">
+                            Copyright © 2017   All rights reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hot w100 hidden-sm hidden-md hidden-lg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3 text-center no-padding"><a href="tel:0512-89162157" class="no-decoration"><span><img src="~/lib/aifang/ydd_1.png"></span><h6 class="no-margin">电话</h6></a></div>
+                <div class="col-xs-3 text-center no-padding"><a href="#" class="no-decoration"><span><img src="~/lib/aifang/ydd_2.png"></span><h6 class="no-margin">专车</h6></a></div>
+                <div class="col-xs-3 text-center no-padding"><a href="#" class="no-decoration"><span><img src="~/lib/aifang/ydd_3.png"></span><h6 class="no-margin">分享</h6></a></div>
+                <div class="col-xs-3 text-center no-padding"><a href="mailto:lianjia_w@126.com" class="no-decoration"><span><img src="~/lib/aifang/ydd_4.png"></span><h6 class="no-margin">邮件</h6></a></div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,599 @@
+﻿@model service.Model.UserInfoDto
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://www.lianjia-w.com/xf-info.asp?id=100 -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>爱房网</title>
+    <link href="~/lib/aifang/bootstrap.min.css" rel="stylesheet">
+    <link href="~/lib/aifang/component.css" rel="stylesheet">
+    <link href="~/lib/aifang/owlCarousel.css" rel="stylesheet">
+    <link href="~/lib/aifang/swiper.css"  rel="stylesheet" >
+    <link href="~/lib/aifang/style.css" rel="stylesheet">
+    <link href="~/lib/aifang/list.css" rel="stylesheet">
+    <link href="~/lib/aifang/baguetteBox.css" rel="stylesheet">
+    <script src="~/lib/aifang/jquery.min.js"></script>
+    <script>
+        //var _hmt = _hmt || [];
+        //(function () {
+        //    var hm = document.createElement("script");
+        //    hm.src = "https://hm.baidu.com/hm.js?35726ac2a3894c26993c5702917c244f";
+        //    var s = document.getElementsByTagName("script")[0];
+        //    s.parentNode.insertBefore(hm, s);
+        //})();
+    </script>
+
+
+    <div>
+        <iframe style="display:none" id="sojtracker0" name="sojtracker0" height="300" width="500" src=""></iframe>
+    </div>
+    @*<form action="http://s.anjuke.com/stb?__site=anjuke-npv&amp;" method="post" target="sojtracker0"><input type="hidden" name="p" value=""><input type="hidden" name="h" value="http://www.lianjia-w.com/xf-info.asp?id=100"><input type="hidden" name="r" value="http://www.lianjia-w.com/"><input type="hidden" name="site" value="anjuke-npv"><input type="hidden" name="guid" value=""><input type="hidden" name="ssid" value=""><input type="hidden" name="uid" value="0"><input type="hidden" name="t" value="1552730889522"><input type="hidden" name="ctid" value=""><input type="hidden" name="luid" value=""><input type="hidden" name="m" value=""><input type="hidden" name="cp" value="{from:loupan_index_traffic}"></form>*@
+    @*<script type="text/javascript" src="http://p.qiao.baidu.com/cps2/site/poll?cb=jsonp_bridge_1552731011117_13330632936944675&amp;l=1&amp;v=1723251310010661510&amp;s=10661510&amp;e=23358713&amp;dev=0&amp;auth=%7B%22anonym%22%3A0%2C%22key%22%3A%226066302162910061592wbii9786246096%22%2C%22sn%22%3A%22728866502%22%2C%22id%22%3A%221723251310010661510%22%2C%22from%22%3A4%2C%22token%22%3A%22bridge%22%7D&amp;_time=1552731011117" id="id_jsonp_bridge_1552731011117_13330632936944675" charset="utf-8">
+
+    </script>*@
+</head>
+<body class="hover">
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="menu clearfix">
+                        <div class="logo pull-left">
+                            <a href="#">
+
+                            </a>
+                        </div>
+                        <div class="chengshi pull-left">
+                            <div class="chengshi-btn">
+                                <h4 class="tr">
+                                    <span class="hidden-md hidden-lg tr active"></span>
+                                    不限
+
+                                </h4>
+                                <h6 class="hidden-xs hidden-sm">更换城市</h6>
+                                <div class="gohome">
+                                    <a href="#">
+
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="chengshi-box">
+                                <h6>热门城市</h6>
+                                <p>
+
+
+                                </p>
+                            </div>
+                        </div>
+                        <nav class="pull-right">
+                            <ul class="list-unstyled no-margin">
+                                <li class="pull-left  li0"><a href="#" class="tr text-center">首页<span>HOME</span></a></li>
+                                <li class="pull-left active li1"><a href="#" class="tr text-center">新房<span>PROJECT</span></a></li>
+                                <li class="pull-left  li2"><a href="#" class="tr text-center">看房团<span>GROUP</span></a></li>
+                                <li class="pull-left  li3"><a href="#" class="tr text-center">关于我们<span>ABOUT</span></a></li>
+                                <li class="pull-left  li4"><a href="#" class="tr text-center">在线留言<span>MESSAGE</span></a></li>
+                            </ul>
+                        </nav>
+                        <div class="ydd_btn pull-right hidden-md hidden-lg">
+                            <span class="tr pull-left s1"></span>
+                            <span class="tr pull-left s2"></span>
+                            <span class="tr pull-left s3"></span>
+                            <span class="tr pull-left s4"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content active">
+        <div class="container-fluid box-container-fluid">
+            <div class="row box-row">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="cp-header bor hidden-xs hidden-sm">
+                            <div class="menu">
+                                <ul class="list-unstyled no-margin clearfix">
+                                    <li class="pull-left text-center active li0"><a href="#" class="tr">楼盘主页</a></li>
+                                    <li class="pull-left text-center li1"><a href="#" class="tr">楼盘详情</a></li>
+                                    <li class="pull-left text-center li2"><a href="#" class="tr">楼盘相册</a></li>
+                                    <li class="pull-left text-center li3"><a href="#" class="tr">参考月供</a></li>
+                                    <li class="pull-left text-center li4"><a href="#" class="tr">地图</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 box-col-xs-12">
+                    <div class="title6">
+                        <p class="no-margin">当前位置：<a href="#" class="tr">首页</a> &gt; 看房团</p>
+                    </div>
+                    <div class="kuang-1 bor-1 pad-1 mar-1">
+                        <div class="clearfix">
+                            @{
+                                var imgList = ViewData["imglist"] as List<string>;
+                                <div class="pictrue11 pull-left">
+                                    <div class="pc-slide">
+                                        <div class="view">
+                                            <div class="swiper-container" style="height: 355px;">
+                                                <a class="arrow-left" href="#"></a>
+                                                <a class="arrow-right" href="#"></a>
+
+                                                <div class="swiper-wrapper" style="width: 2368px; height: 592px;">
+                                                    <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 592px; height: 355px;">
+                                                        <a target="_blank" style="background:url(@imgList[0]) 50% 50%; background-size:cover;">
+                                                            <img src="/lib/aifang/p11_mb.png" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide" style="width: 592px; height: 355px;">
+                                                        <a target="_blank" style="background:url(@imgList[1]) 50% 50%; background-size:cover;">
+                                                            <img src="/lib/aifang/p11_mb.png" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide" style="width: 592px; height: 355px;">
+                                                        <a target="_blank" style="background:url(@imgList[2]) 50% 50%; background-size:cover;">
+                                                            <img src="/lib/aifang/p11_mb.png" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide" style="width: 592px; height: 355px;">
+                                                        <a target="_blank" style="background:url(@imgList[3]) 50% 50%; background-size:cover;">
+                                                            <img src="/lib/aifang/p11_mb.png" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="preview">
+                                            <a class="arrow-left" href="#"></a>
+                                            <a class="arrow-right" href="#"></a>
+
+                                            <div class="swiper-container" style="height: 82px;">
+                                                <div class="swiper-wrapper" style="width: 473.6px; height: 82px;">
+                                                    <div class="swiper-slide active-nav swiper-slide-visible swiper-slide-active" style="width: 118.4px; height: 82px;">
+                                                        <a style="background:url(@imgList[0]) 50% 50%; background-size:cover;">
+                                                            <img src="/lib/aifang/p11_mb2.png" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide active-nav swiper-slide-visible" style="width: 118.4px; height: 82px;">
+                                                        <a style="background:url(@imgList[1]) 50% 50%; background-size:cover;">
+                                                            <img src="/lib/aifang/p11_mb2.png" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide active-nav swiper-slide-visible" style="width: 118.4px; height: 82px;">
+                                                        <a style="background:url(@imgList[2]) 50% 50%; background-size:cover;">
+                                                            <img src="/lib/aifang/p11_mb2.png" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="swiper-slide active-nav swiper-slide-visible" style="width: 118.4px; height: 82px;">
+                                                        <a style="background:url(@imgList[3]) 50% 50%; background-size:cover;">
+                                                            <img src="/lib/aifang/p11_mb2.png" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="tuangouhuodong">
+                                        <div class="biaoti">团购活动： <span>看房报名中</span></div>
+                                        <div class="countdown clearfix">
+                                            <strong class="djs pull-right">
+                                                <span id="t_d_1">5</span><b>天</b>
+                                                <span id="t_h_1">12</span><b>时</b>
+                                                <span id="t_m_1">20</span><b>分</b>
+
+                                            </strong>
+                                        </div>
+                                    </div>
+                                    <div class="shenqing clearfix">
+                                        <a href="#" class="tr pull-right text-center">立即申请</a>
+                                        <p class="no-margin pull-right">参与人数：151</p>
+                                    </div>
+                                </div>
+                            }
+                            <div class="pictrue10 pull-right">
+                                <ul class="list-unstyled clearfix">
+                                    <li class="pull-left w100 li0">
+                                        <div class="box"><span style="color:#ff8b00; font-size:26px; font-weight:bold;">@Model.SellingPoint </span></div>
+                                    </li>
+                                    <li class="pull-left w100 li1">
+                                        <div class="box">
+                                            <span>销售均价</span>
+                                            <p class="no-margin">@Model.Price 元/m2</p>
+                                        </div>
+                                    </li>
+                                    <li class="pull-left w100 li2">
+                                        <div class="box">
+                                            <span>楼盘户型</span>
+                                            <p class="no-margin">@Model.Apartment</p>
+                                        </div>
+                                    </li>
+                                    <li class="pull-left w100 li3">
+                                        <div class="box">
+                                            <span>楼盘地址</span>
+                                            <p class="no-margin">@Model.Address</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="textbox">
+
+                                    <div class="tel clearfix">
+                                        <h5 class="no-margin pull-left"><b>销售热线：</b> <b><a href="tel:0512-81662078" style="color:#eb950f">0512-81662078</a></b></h5>
+
+                                    </div>
+                                </div>
+                                <ul class="list-unstyled clearfix">
+                                    <li class="pull-left w100 li0">
+                                        <div class="box no-padding">
+                                            <p class="no-margin" style="color:#ff8b00;">最新政策、 价格详情，敬请电话咨询售楼处</p>
+                                        </div>
+                                    </li>
+                                    <li class="pull-left li1">
+                                        <div class="box">
+                                            <span>面积</span>
+                                            <p class="no-margin">@Model.Areas  m2</p>
+                                        </div>
+                                    </li>
+                                    <li class="pull-left li2">
+                                        <div class="box">
+                                            <span>交房时间 </span>
+                                            <p class="no-margin">@Model.MakeRoomTime</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="pull-left li3">
+                                        <div class="box">
+                                            <span>建筑类型</span>
+                                            <p class="no-margin">普通住宅</p>
+                                        </div>
+                                    </li>
+
+                                    <li class="pull-left li5">
+                                        <div class="box">
+                                            <span>产权年限</span>
+                                            <p class="no-margin">70</p>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                                @*<div class="kanfang clearfix">
+                <div class="yikan pull-left">已有<span>25507</span>观看</div>
+                <a href="http://www.lianjia-w.com/message.asp#1" class="tr pull-right text-center">报名看房</a>
+            </div>*@
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="jgx2 hidden-md hidden-lg" style="margin:0 -15px;"></div>
+                    <div class="title41">推荐理由</div>
+                    <div class="pictrue14 bor">
+                        <ul class="list-unstyled no-margin clearfix">
+                            <li class="pull-left li0">
+                                <div class="shuzibox"><span><img src="/lib/aifang/shuzi1.png" alt=""></span></div>
+                                <div class="textbox">
+                                    配套完善，小区自带超市和儿童游乐场，周边不仅教育资源丰富，且万达广场、繁花中心、亿象新天地等综合商场、银行、医院、邮局、娱乐设施等一站式生活配套齐全，满足业主的生活需求。
+                                </div>
+                            </li>
+                            <li class="pull-left li1">
+                                <div class="shuzibox"><span><img src="/lib/aifang/shuzi2.png" alt=""></span></div>
+                                <div class="textbox">
+                                    品牌房企，项目是万科在苏州打造的第11个人居社区，引入万科幸福系和万科全新的V-KIDS计划，是苏州儿童主题社区，万科地产是国内领先的房地产公司，位列“世界500强”榜单第356位。
+                                </div>
+                            </li>
+                            <li class="pull-left li2">
+                                <div class="shuzibox"><span><img src="/lib/aifang/shuzi3.png" alt=""></span></div>
+                                <div class="textbox">
+                                    临近地铁，项目交通便捷，毗邻地铁4号线姚祥站1公里左右，4号线已于2017年4月开通运行，与1/2号线无缝对接，通达苏州各区，还有多路公交可达，业主出行十分便利。
+                                </div>
+                            </li>
+                            <li class="pull-left li3">
+                                <div class="shuzibox"><span><img src="/lib/aifang/shuzi4.png" alt=""></span></div>
+                                <div class="textbox">
+                                    品质物业，项目引进万科物业旗下的苏南万科物业服务有限公司，系万科集团全资子公司，依托集团的专业优势，在服务上精心操作，是国内规模最大、兼具优质服务形象及客户口碑的物业服务领航企业。
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="jgx2 hidden-md hidden-lg" style="margin:0 -15px;"></div>
+                    <div class="title41 clearfix">
+                        户型展示
+                    </div>
+
+
+                    <div class="kuang-1 bor-2 pad-1 mar-1" style="border-top:solid 3px #faa41d;">
+                        <div class="title2" style="background:url(images/icon/t4_icon_2.png) no-repeat left;">项目介绍</div>
+                        <div class="text4"><span style="color:#333333;font-family:" font-size:14px;background-color:#ffffff;"="">@Model.Remark</span></div>
+                    </div>
+
+                    <div class="kuang-1 bor-2 pad-1 mar-1" style="border-top:solid 3px #faa41d;">
+
+                        <div class="title2" style="background:url(images/icon/t4_icon_1.png) no-repeat left;">优惠动态</div>
+                        <div class="text2">
+                            <ul class="list-unstyled no-margin clearfix">
+
+                                <li class="li0 lia">
+                                    <a href="#">
+                                        <div class="time">
+                                            2017<br>
+                                            8月18日
+                                        </div>
+                                        <div class="textbox">
+                                            <h5 class="tr overflow">网友优惠</h5>
+                                            <p>为热烈庆祝我公司网站上线，现在报名看房的客户可享受免费看房车接送服务，通过我公司成交更有购物看可以领取。详情咨询你的专属置业顾问。期待您的到来。........</p>
+                                        </div>
+                                    </a>
+                                </li>
+
+                                <li class="li1 lib">
+                                    <a href="#">
+                                        <div class="time">
+                                            2017<br>
+                                            5月11日
+                                        </div>
+                                        <div class="textbox">
+                                            <h5 class="tr overflow">房产冷知识：买房前必须知道的那些事</h5>
+                                            <p>
+                                                买房是一件大事，房产知识涉及到各个方面。购房的赠送面积怎么看？房子产权70年，到期后房子就属于国家了吗？
+                                        </div>
+                                    </a>
+
+                                </li>
+                                <li class="li2 lic">
+                                    <a href=#">
+                                        <div class="time">
+                                            2017<br>
+                                            5月11日
+                                        </div>
+                                        <div class="textbox">
+                                            <h5 class="tr overflow">房产冷知识：买房前必须知道的那些事</h5>
+                                            <p>
+                                                买房是一件大事，房产知识涉及到各个方面。购房的赠送面积怎么看？房子产权70年，到期后房子就属于国家了吗？
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a name="a1"></a>
+                    <div class="jgx2 hidden-md hidden-lg" style="margin:0 -15px;"></div>
+                    <!--<div class="title41 clearfix">
+                            楼盘相册
+
+                        </div>
+                        <div class="pictrue15 bor gallery mar photo0">
+                            <ul class="list-unstyled clearfix">
+
+                    <li class="pull-left li0">
+                                    <div class="imgbox"> <a class="imgs" href="http://www.lianjia-w.com/admin/uploadpic/2017918517140906889.jpg" style="background: url(&quot;admin/uploadpic/2017918517140906889.jpg&quot;) 50% 50% / cover; height: 133.5px;"></a></div>
+
+                                </li>
+
+                                <li class="pull-left li1">
+                                    <div class="imgbox"> <a class="imgs" href="http://www.lianjia-w.com/admin/uploadpic/2017918517141004461.jpg" style="background: url(&quot;admin/uploadpic/2017918517141004461.jpg&quot;) 50% 50% / cover; height: 133.5px;"></a></div>
+                                </li>
+                                <li class="pull-left li2">
+                                    <div class="imgbox"> <a class="imgs" href="http://www.lianjia-w.com/admin/uploadpic/2017918517141105429.jpg" style="background: url(&quot;admin/uploadpic/2017918517141105429.jpg&quot;) 50% 50% / cover; height: 133.5px;"></a></div>
+                                </li>
+                                <li class="pull-left li3">
+                                    <div class="imgbox"> <a class="imgs" href="http://www.lianjia-w.com/admin/uploadpic/2017918517141206596.jpg" style="background: url(&quot;admin/uploadpic/2017918517141206596.jpg&quot;) 50% 50% / cover; height: 133.5px;"></a></div>
+                                </li>
+                                <li class="pull-left li4">
+                                    <div class="imgbox"> <a class="imgs" href="http://www.lianjia-w.com/xf-info.asp?id=100" style="background: url(&quot;&quot;) 50% 50% / cover; height: 133.5px;"></a></div>
+                                </li>
+                                <li class="pull-left li5">
+                                    <div class="imgbox"> <a class="imgs" href="http://www.lianjia-w.com/xf-info.asp?id=100" style="background: url(&quot;&quot;) 50% 50% / cover; height: 133.5px;"></a></div>
+                                </li>
+                            </ul>
+                        </div>-->
+
+
+
+                    <a name="a2"></a>
+
+                    <div class="calculate mar bor">
+                        <div id="calculate01">
+                            <form name="calc1" class="clearfix"></form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="neirong clearfix">
+                        <div class="left pull-left">
+                            <h5>关于我们</h5>
+                            <p>
+                            </p><h4>
+                                <span style="font-family:SimHei;font-size:24px;">
+                                    <strong>
+                                        <span style="font-size:18px;">
+                                            <span style="font-family:SimSun;"><span style="color:#FFFFFF;"></span><span style="color:#FFFFFF;">一对一为您服务！</span></span><br>
+                                        </span>
+                                    </strong>
+                                </span><span style="font-family:SimHei;font-size:24px;">
+                                    <strong>
+                                        <span style="font-size:18px;">
+                                            <span style="font-family:SimSun;color:#FFFFFF;"> 信息全面：为您推荐适合您的优质房源；</span><br>
+                                        </span>
+                                    </strong>
+                                </span><span style="font-family:SimHei;font-size:24px;">
+                                    <strong>
+                                        <span style="font-size:18px;">
+                                            <span style="font-family:SimSun;color:#FFFFFF;"> 找房方便：为您采集最新信息，在家就能看房；</span><br>
+                                        </span>
+                                    </strong>
+                                </span><span style="font-family:SimHei;font-size:24px;">
+                                    <strong>
+                                        <span style="font-size:18px;">
+                                            <span style="font-family:SimSun;color:#FFFFFF;"> 咨询专业：即时在线咨询，有事您说话；</span><br>
+                                        </span>
+                                    </strong>
+                                </span><span style="font-family:SimHei;font-size:24px;">
+                                    <strong>
+                                        <span style="font-size:18px;">
+                                            <span style="font-family:SimSun;color:#FFFFFF;"> 优势：</span><br>
+                                        </span>
+                                    </strong>
+                                </span><span style="font-family:SimHei;font-size:24px;">
+                                    <strong>
+                                        <span style="font-size:18px;">
+                                            <span style="font-family:SimSun;color:#FFFFFF;"> 时刻为您着想，为您找到心仪的房源，专业解答您的问题，一站式为您服务。</span><br>
+                                        </span>
+                                    </strong>
+                                </span><span style="font-family:SimSun;font-size:24px;"><strong><span style="font-size:18px;font-family:SimSun;"><span style="color:#FFFFFF;"> ——您家庭的港湾！</span><span style="color:#FFFFFF;"></span></span></strong></span>
+                            </h4>
+                            <p>
+                                <br>
+                            </p>
+                            <p>
+                                <span style="font-size:14px;"></span><span style="font-size:16px;"></span><span style="font-size:14px;"></span><br>
+                                <span style="font-size:14px;"></span><br>
+                                <span style="font-size:14px;"></span><br>
+                                <span style="font-size:14px;"></span>
+                            </p>
+                            <p></p>
+                            <h6>——开启您的房产置业之旅！</h6>
+                        </div>
+                        <div class="zhong pull-left">
+                            <div class="box">
+                                <h5>服务热线</h5>
+                                <h4>400-060-1508</h4>
+                                <p>
+                                    周一至周日 9:00 - 21:00<br>
+                                    法定节假日除外 <br>
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="right pull-left">
+                            <div class="box">
+                                <h5>扫一扫</h5>
+                                <div class="ewm clearfix">
+                                    <div class="ewms pull-left text-center">
+                                        <img src="/lib/aifang/ewm2.jpg" alt="">
+                                        <h6>关注微信公众号</h6>
+                                    </div>
+                                    <div class="ewms pull-left text-center">
+                                        <img src="/lib/aifang/ewm3.jpg" alt="">
+                                        <h6>关注移动官网</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <nav class="text-center">
+                            <ul class="list-unstyled no-margin clearfix">
+                                <li class="li0"><a href="#" class="tr">首页</a></li>
+                                <li class="li1"><a href="#" class="tr">新房</a></li>
+                                <li class="li2"><a href="#" class="tr">看房团</a></li>
+                                <li class="li3"><a href="#" class="tr">关于我们</a></li>
+                                <li class="li4"><a href="#" class="tr">在线留言</a></li>
+                            </ul>
+                        </nav>
+                        <p class="p1 text-center">
+                            Copyright © 2017   All rights reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hot w100 hidden-sm hidden-md hidden-lg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3 text-center no-padding"><a href="tel:0512-89162157" class="no-decoration"><span><img src="/lib/aifang/ydd_1.png"></span><h6 class="no-margin">电话</h6></a></div>
+                <div class="col-xs-3 text-center no-padding"><a href="#" class="no-decoration"><span><img src="/lib/aifang/ydd_2.png"></span><h6 class="no-margin">专车</h6></a></div>
+                <div class="col-xs-3 text-center no-padding"><a href="#" class="no-decoration"><span><img src="/lib/aifang/ydd_3.png"></span><h6 class="no-margin">分享</h6></a></div>
+                <div class="col-xs-3 text-center no-padding"><a href="#" class="no-decoration"><span><img src="/lib/aifang/ydd_4.png"></span><h6 class="no-margin">邮件</h6></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="dbbox hidden-sm hidden-md hidden-lg">
+        <div class="dbs ewm-box">
+            <div class="neirong">
+                @*<img src="/lib/aifang/shouji.jpg" alt="">*@
+            </div>
+        </div>
+        <div class="dbs fenxiang-box">
+            <div class="neirong">
+                <div class="bdsharebuttonbox clearfix bdshare-button-style1-32" data-bd-bind="1552730887919">
+                    <div class="pull-left li"><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a></div>
+                    <div class="pull-left li"><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a></div>
+                    <div class="pull-left li"><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a></div>
+                    <div class="pull-left li"><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+                    <div class="pull-left li"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    @*<script>
+            $(document).ready(function () {
+                $('.pgwSlideshow').pgwSlideshow({
+                    transitionEffect: 'fading',
+                    autoSlide: true
+                });
+            });
+        </script>*@
+    <!--<script src="/lib/aifang/homt.js.下载"></script>-->
+    @*<script>
+            window.perfConfig = {
+                pageName: 'Aifang_Web_Loupan_View2_IndexPage',
+                siteName: 'aifang'
+            };
+        </script>
+        <script>
+            window.onload = function () {
+                $(".pictrue15").each(function (i) {
+                    $(".pictrue15").eq(i).addClass("photo" + i);
+                    baguetteBox.run("." + "photo" + i);
+                });
+            };
+        </script>*@
+
+    <!--<script src="./爱房网_files/baguetteBox.js.下载"></script>
+        <script src="./爱房网_files/bb.js.下载"></script>
+        <script src="./爱房网_files/Aifang_Web_Loupan_View2_Index.js.下载"></script>
+        <script src="./爱房网_files/bootstrap2.js.下载"></script>
+        <script src="./爱房网_files/ie10-viewport-bug-workaround.js.下载"></script>
+        <script src="./爱房网_files/owl.carousel.js.下载"></script>
+        <script src="./爱房网_files/indexowl.js.下载"></script>
+
+        <script src="./爱房网_files/p11_swiper.js.下载"></script>
+        <script src="./爱房网_files/Suen.js.下载"></script>
+        <script src="./爱房网_files/pgwslideshow.min.js.下载"></script>-->
+    <!-- 户型介绍弹窗 -->
+    <!-- 倒计时  -->
+    <!--<script src="./爱房网_files/bb.js.下载"></script>
+    <script src="./爱房网_files/Aifang_Web_Loupan_View2_Index.js.下载"></script>-->
+    <script src="/lib/aifang/swiper.min.js"></script>
+    <script src="/lib/aifang/p11_swiper.js"></script>
+
+</body>
+</html>
