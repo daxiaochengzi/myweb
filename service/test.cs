@@ -9,7 +9,7 @@ namespace service
         // 创建一个空的数据库
       public   void createNewDatabase()
         {
-            SQLiteConnection.CreateFile("MyDatabase.sqlite");
+            SQLiteConnection.CreateFile("MyDatabase.sqlite"); //123
         }
 
 
