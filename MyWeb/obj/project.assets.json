@@ -13108,11 +13108,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\work\\webgit\\myweb\\MyWeb\\MyWeb.csproj",
+      "projectUniqueName": "E:\\work\\webgitNew\\MyWeb\\MyWeb.csproj",
       "projectName": "MyWeb",
-      "projectPath": "E:\\work\\webgit\\myweb\\MyWeb\\MyWeb.csproj",
+      "projectPath": "E:\\work\\webgitNew\\MyWeb\\MyWeb.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "E:\\work\\webgit\\myweb\\MyWeb\\obj\\",
+      "outputPath": "E:\\work\\webgitNew\\MyWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13132,8 +13132,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "E:\\work\\webgit\\myweb\\service\\service.csproj": {
-              "projectPath": "E:\\work\\webgit\\myweb\\service\\service.csproj"
+            "E:\\work\\webgitNew\\service\\service.csproj": {
+              "projectPath": "E:\\work\\webgitNew\\service\\service.csproj"
             }
           }
         }

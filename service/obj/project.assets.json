@@ -785,11 +785,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\work\\webgit\\myweb\\service\\service.csproj",
+      "projectUniqueName": "E:\\work\\webgitNew\\service\\service.csproj",
       "projectName": "service",
-      "projectPath": "E:\\work\\webgit\\myweb\\service\\service.csproj",
+      "projectPath": "E:\\work\\webgitNew\\service\\service.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "E:\\work\\webgit\\myweb\\service\\obj\\",
+      "outputPath": "E:\\work\\webgitNew\\service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
