@@ -6,7 +6,7 @@ namespace service
     public class test
     {
         SQLiteConnection m_dbConnection;
-        // 创建一个空的数据库
+        // 创建一个空的数据库、
       public   void createNewDatabase()
         {
             SQLiteConnection.CreateFile("MyDatabase.sqlite"); //123
