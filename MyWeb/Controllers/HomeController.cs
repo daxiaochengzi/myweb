@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyWeb.Models;
 using service;
 using service.Dto;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace MyWeb.Controllers
 {
@@ -15,6 +16,7 @@ namespace MyWeb.Controllers
 
         public IActionResult Index( )
         {
+          
             //var param = new UserInfoPagedDto();
             //var userData = new UserInfoDataBase();
             //var resultData = userData.pageList(param);

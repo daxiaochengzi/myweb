@@ -1,5 +1,3 @@
-E:\work\webgit\MyWeb\bin\Release\netcoreapp2.2\linux-x64\libhostpolicy.so
-E:\work\webgit\MyWeb\bin\Release\netcoreapp2.2\linux-x64\libhostfxr.so
 E:\work\webgit\MyWeb\bin\Release\netcoreapp2.2\linux-x64\MyWeb
 E:\work\webgit\MyWeb\bin\Release\netcoreapp2.2\linux-x64\Dockerfile
 E:\work\webgit\MyWeb\bin\Release\netcoreapp2.2\linux-x64\MyWeb.deps.json
