@@ -9,7 +9,8 @@ namespace service
         // 创建一个空的数据库、
       public   void createNewDatabase()
         {
-            SQLiteConnection.CreateFile("MyDatabase.sqlite"); //123 
+            SQLiteConnection.CreateFile("MyDatabase"); //123 sqlite
+            createTable();
         }
 
 
@@ -17,11 +18,36 @@ namespace service
         //在指定数据库中创建一个table  
         public void createTable()
         {
-            m_dbConnection = new SQLiteConnection("Data Source=MyDatabase.sqlite");
+            m_dbConnection = new SQLiteConnection("Data Source=MyDatabase");
             m_dbConnection.Open();
-            string sql = "create table highscores (name varchar(20), score int)";
+            string sql =string.Format(@"CREATE TABLE Img (
+             Id varchar(32),
+             UserInfoId varchar(32),
+             type int,
+             Url nvarchar(4000),
+             CreateTime datetime,
+             Remark nvarchar(4000)
+            )") ;
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
             command.ExecuteNonQuery();
+            string sql2 = string.Format(@"CREATE TABLE UserInfo (
+             Id varchar(32),
+             UserName nvarchar(100),
+             Phone nvarchar(60),
+             Address nvarchar(1000),
+             CreateTime datetime,
+             MakeRoomTime nvarchar(60),
+             SellingPoint nvarchar(100),
+             RoomNumber nvarchar(50),
+             Price nvarchar(100),
+             AllPrice nvarchar(100),
+             Areas nvarchar(100),
+             Apartment nvarchar(100),
+             Remark nvarchar(4000)
+            )");
+            SQLiteCommand commandc = new SQLiteCommand(sql, m_dbConnection);
+            commandc.ExecuteNonQuery();
+            m_dbConnection.Close();
         }
 
         //插入一些数据  

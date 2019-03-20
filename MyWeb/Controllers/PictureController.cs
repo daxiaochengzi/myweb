@@ -30,6 +30,12 @@ namespace MyWeb.Controllers
         {
             return View();
         }
+        public IActionResult CreateTable()
+        {
+            var t = new test();
+            t.createNewDatabase();
+            return Content("123");
+        }
 
         [HttpPost]
         public IActionResult Create([FromBody] UserInfo data)
