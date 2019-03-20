@@ -24,7 +24,7 @@ namespace MyWeb.Controllers
             return View();
         }
         public IActionResult Detail(string UserInfoId)
-        {
+        {  
             var userData = new UserInfoDataBase();
             var datas = userData.GetUserInfo(UserInfoId);
             var imglist= userData.GetImg(UserInfoId);
