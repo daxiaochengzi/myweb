@@ -45,7 +45,32 @@ namespace service
              Apartment nvarchar(100),
              Remark nvarchar(4000)
             )");
-            SQLiteCommand commandc = new SQLiteCommand(sql, m_dbConnection);
+            SQLiteCommand commandc = new SQLiteCommand(sql2, m_dbConnection);
+            commandc.ExecuteNonQuery();
+            m_dbConnection.Close();
+        }
+        public void createTables()
+        {
+            m_dbConnection = new SQLiteConnection("Data Source=MyDatabase");
+            m_dbConnection.Open();
+
+        
+            string sql2 = string.Format(@"CREATE TABLE UserInfo (
+             Id varchar(32),
+             UserName nvarchar(100),
+             Phone nvarchar(60),
+             Address nvarchar(1000),
+             CreateTime datetime,
+             MakeRoomTime nvarchar(60),
+             SellingPoint nvarchar(100),
+             RoomNumber nvarchar(50),
+             Price nvarchar(100),
+             AllPrice nvarchar(100),
+             Areas nvarchar(100),
+             Apartment nvarchar(100),
+             Remark nvarchar(4000)
+            )");
+            SQLiteCommand commandc = new SQLiteCommand(sql2, m_dbConnection);
             commandc.ExecuteNonQuery();
             m_dbConnection.Close();
         }
