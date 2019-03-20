@@ -69,9 +69,9 @@ E:\work\webgitNew\service\obj\Debug\netcoreapp2.2\service.pdb
 E:\work\webgit\service\bin\Debug\netcoreapp2.2\service.deps.json
 E:\work\webgit\service\bin\Debug\netcoreapp2.2\service.dll
 E:\work\webgit\service\bin\Debug\netcoreapp2.2\service.pdb
-E:\work\webgit\service\obj\Debug\netcoreapp2.2\service.csprojAssemblyReference.cache
 E:\work\webgit\service\obj\Debug\netcoreapp2.2\service.csproj.CoreCompileInputs.cache
 E:\work\webgit\service\obj\Debug\netcoreapp2.2\service.AssemblyInfoInputs.cache
 E:\work\webgit\service\obj\Debug\netcoreapp2.2\service.AssemblyInfo.cs
 E:\work\webgit\service\obj\Debug\netcoreapp2.2\service.dll
 E:\work\webgit\service\obj\Debug\netcoreapp2.2\service.pdb
+E:\work\webgit\service\obj\Debug\netcoreapp2.2\service.csprojAssemblyReference.cache

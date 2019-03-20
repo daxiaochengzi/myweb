@@ -14,7 +14,7 @@ namespace service
         /// </summary>
         //
         //public static string connectionString = "Data Source=" + Application.StartupPath + "\\" + System.Configuration.ConfigurationSettings.AppSettings["Contr"];
-        public static string connectionString = "Data Source=MyDatabase.sqlite";
+        public static string connectionString = "Data Source=./datas/MyDatabase.sqlite";
 
         #region 执行数据库操作(新增、更新或删除)，返回影响行数
 

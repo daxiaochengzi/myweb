@@ -30,9 +30,4 @@
     </None>
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Folder Include="datas\" />
-  </ItemGroup>
-
 </Project>
