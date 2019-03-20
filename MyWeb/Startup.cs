@@ -54,9 +54,11 @@ namespace MyWeb
                 options.AllowAnyMethod();
                 options.AllowAnyOrigin();
             });
+             
             app.UseStaticFiles();
             app.UseCookiePolicy();
     
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
