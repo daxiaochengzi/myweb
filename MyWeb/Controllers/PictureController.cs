@@ -126,60 +126,69 @@ namespace MyWeb.Controllers
         [HttpPost]
         public IActionResult UpImg([FromForm]IFormCollection formData)
         {
-            IFormFileCollection files = formData.Files;
-            var ImgId = Request.Form["ImgId"];
-            var Imgtype = Request.Form["Imgtype"];
-            var userData = new UserInfoDataBase();
-            long size = files.Sum(f => f.Length);
-
-            //size > 100MB refuse upload !
-            if (size > 104857600)
+            try
             {
-                return Json(Return_Helper_DG.Error_Msg_Ecode_Elevel_HttpCode("图片总共大小不能超过 100MB "));
+                IFormFileCollection files = formData.Files;
+                var ImgId = Request.Form["ImgId"];
+                var Imgtype = Request.Form["Imgtype"];
+                var userData = new UserInfoDataBase();
+                long size = files.Sum(f => f.Length);
+
+                //size > 100MB refuse upload !
+                if (size > 104857600)
+                {
+                    return Json(Return_Helper_DG.Error_Msg_Ecode_Elevel_HttpCode("图片总共大小不能超过 100MB "));
+                }
+
+                List<string> filePathResultList = new List<string>();
+
+                foreach (var file in files)
+                {
+                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+
+                    string filePath = hostingEnv.WebRootPath + $@"\Files\Pictures\";
+
+                    if (!Directory.Exists(filePath))
+                    {
+                        Directory.CreateDirectory(filePath);
+                    }
+
+                    string suffix = fileName.Split('.')[1];
+
+                    if (!pictureFormatArray.Contains(suffix))
+                    {
+                        return Json(Return_Helper_DG.Error_Msg_Ecode_Elevel_HttpCode("当前图片格式不支持"));
+                    }
+
+                    fileName = Guid.NewGuid() + "." + suffix;
+
+                    string fileFullName = filePath + fileName;
+                    var entit = new Img();
+                    entit.Id = Guid.NewGuid();
+                    entit.UserInfoId = Guid.Parse(ImgId);
+                    entit.CreateTime = DateTime.Now;
+                    entit.Type = Convert.ToInt16(Imgtype);
+                    entit.Url = fileName;
+                    //保存数据
+                    userData.AddImg(entit);
+                    using (FileStream fs = System.IO.File.Create(fileFullName))
+                    {
+                        file.CopyTo(fs);
+                        fs.Flush();
+                    }
+                    filePathResultList.Add($"/src/Pictures/{fileName}");
+                }
+
+                string message = $"上传成功";
+
+                return Json(Return_Helper_DG.Success_Msg_Data_DCount_HttpCode(message, filePathResultList, filePathResultList.Count));
             }
-
-            List<string> filePathResultList = new List<string>();
-
-            foreach (var file in files)
+            catch (Exception e)
             {
-                var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-
-                string filePath = hostingEnv.WebRootPath + $@"\Files\Pictures\";
-
-                if (!Directory.Exists(filePath))
-                {
-                    Directory.CreateDirectory(filePath);
-                }
-
-                string suffix = fileName.Split('.')[1];
-
-                if (!pictureFormatArray.Contains(suffix))
-                {
-                    return Json(Return_Helper_DG.Error_Msg_Ecode_Elevel_HttpCode("当前图片格式不支持"));
-                }
-
-                fileName = Guid.NewGuid() + "." + suffix;
-
-                string fileFullName = filePath + fileName;
-                var entit=new Img();
-                entit.Id = Guid.NewGuid();
-                entit.UserInfoId=Guid.Parse(ImgId);
-                entit.CreateTime=DateTime.Now;
-                entit.Type = Convert.ToInt16(Imgtype);
-                entit.Url = fileName;
-                //保存数据
-                userData.AddImg(entit);
-                using (FileStream fs = System.IO.File.Create(fileFullName))
-                {
-                    file.CopyTo(fs);
-                    fs.Flush();
-                }
-                filePathResultList.Add($"/src/Pictures/{fileName}");
+                Console.WriteLine(e);
+                throw;
             }
-
-            string message = $"上传成功";
-
-            return Json(Return_Helper_DG.Success_Msg_Data_DCount_HttpCode(message, filePathResultList, filePathResultList.Count));
+           
         }
 
     }

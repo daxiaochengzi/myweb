@@ -130,13 +130,11 @@ function Btn_Click() {
         success: function () {
             $("#uploadForm").css('display', 'none'); 
             toastr.success("上传成功!!!");
-         
         },
-        error: function () {
-           
-            toastr.error("操作失败" + msg.msg);
-
-        }
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            toastr.error(XMLHttpRequest.responseText);
+        } 
+    
     });
 }
 
