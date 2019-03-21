@@ -10,7 +10,7 @@ namespace service.Model
         public  string UserName { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
-        public DateTime CreateTime { get; set; }
+        public string CreateTime { get; set; }
         /// <summary>
         /// 交房时间
         /// </summary>

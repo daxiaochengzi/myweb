@@ -90,6 +90,16 @@ namespace MyWeb.Controllers
             var total = resultData.Keys.FirstOrDefault();
             return Json(new { total = total, rows = rows, index = param.offset });
         }
+
+        [HttpGet]
+        public IActionResult pageListstr([FromQuery] UserInfoPagedDto param)
+        {
+            var userData = new UserInfoDataBase();
+            var resultData = userData.pageListstr(param);
+            return Content(resultData);
+        }
+
+        
         [HttpPost]
         public IActionResult Remove([FromBody]RemoveParam param)
         {
@@ -100,7 +110,7 @@ namespace MyWeb.Controllers
             }
             else
             {
-                string strsql = $"delete FROM UserInfo where Id='{param.Id}'";
+                string strsql = $"delete FROM UserInfo where Id= N'{param.Id}'";
                 var dataCount = SQLiteHelper.ExecuteNonQuery(strsql);
                 if (dataCount > 0)
                 {
