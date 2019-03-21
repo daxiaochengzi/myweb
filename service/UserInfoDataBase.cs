@@ -54,7 +54,7 @@ namespace service
         {
 
 
-            string sqls = string.Format(@"select a.Id,a.Address,a.UserName, a.Phone, a.Address,a.CreateTime ,a.MakeRoomTime ,a.SellingPoint,a.RoomNumber,a.Price,a.AllPrice,a.Areas,a.Apartment,a.Remark
+            string sqls = string.Format(@"select a.Id,a.Address,a.UserName, a.Phone, a.Address,a.MakeRoomTime ,a.SellingPoint,a.RoomNumber,a.Price,a.AllPrice,a.Areas,a.Apartment,a.Remark
                   ,(select  Url from img where UserInfoId = a.id order by CreateTime desc limit 1 offset 0) as url from UserInfo as a where a.Id is not null");
             string sqlCount = "select count(*) from UserInfo where Id  is not null";
             string sqlwhere = null;
@@ -159,7 +159,7 @@ namespace service
 
         public UserInfoDto GetUserInfo(string UserInfoId)
         {
-            string strsql = string.Format(@"select a.Id,a.Address,a.UserName, a.Phone, a.Address,a.CreateTime ,a.MakeRoomTime ,a.SellingPoint,a.RoomNumber,a.Price,a.AllPrice,a.Areas,a.Apartment,a.Remark
+            string strsql = string.Format(@"select a.Id,a.Address,a.UserName, a.Phone, a.Address ,a.MakeRoomTime ,a.SellingPoint,a.RoomNumber,a.Price,a.AllPrice,a.Areas,a.Apartment,a.Remark
           from UserInfo as a where  a.id=N'{0}'", UserInfoId);
             var dt = SQLiteHelper.ExecuteDataTable(strsql);
             var userData =new  UserInfoDto();

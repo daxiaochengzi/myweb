@@ -40,12 +40,13 @@ namespace MyWeb.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] UserInfo data)
         {
+          
             string result = "上传对象为空!!!";
             if (data != null)
             {
                 var userData = new UserInfoDataBase();
 
-                string strsql = string.Format($@"insert into  UserInfo values('{data.Id}','{data.UserName}','{data.Phone}','{data.Address}','{DateTime.Now.ToString()}'
+                string strsql = string.Format($@"insert into  UserInfo values('{data.Id}','{data.UserName}','{data.Phone}','{data.Address}','{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:ffff")}'
                                       ,'{data.MakeRoomTime}','{data.SellingPoint}','{data.RoomNumber}','{data.Price}','{data.AllPrice}','{data.Areas}','{data.Apartment}'
                                       ,'{data.Remark}')");
                 var dataCount = SQLiteHelper.ExecuteNonQuery(strsql);
