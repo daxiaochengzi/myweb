@@ -123,7 +123,7 @@ function Btn_Click() {
     data.append("ImgId", Tablearrselections[0].id);
     $.ajax({
         type: "POST",
-        url:  "http://localhost:51464/Picture/UpImg",
+        url:  "/Picture/UpImg",
         contentType: false,
         processData: false,
         data: data,

@@ -126,6 +126,20 @@ namespace MyWeb.Controllers
         [HttpPost]
         public IActionResult UpImg([FromForm]IFormCollection formData)
         {
+            //string result = "进无";
+            //IFormFileCollection files = formData.Files;
+            //   long size = files.Sum(f => f.Length);
+            //   if (size > 0)
+            //   {
+            //       result = "有1";
+            //   }
+
+            //   foreach (var file in files)
+            //   {
+            //       result = "有1";
+            //   }
+
+            //   return Json(result);
             try
             {
                 IFormFileCollection files = formData.Files;
@@ -139,7 +153,7 @@ namespace MyWeb.Controllers
                 {
                     return Json(Return_Helper_DG.Error_Msg_Ecode_Elevel_HttpCode("图片总共大小不能超过 100MB "));
                 }
-                string fileFullNamec ="";
+                string fileFullNamec = "";
                 List<string> filePathResultList = new List<string>();
 
                 foreach (var file in files)
@@ -188,7 +202,7 @@ namespace MyWeb.Controllers
             {
                 throw e;
             }
-           
+
         }
 
     }

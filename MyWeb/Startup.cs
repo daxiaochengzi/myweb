@@ -34,6 +34,10 @@ namespace MyWeb
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
 
         }
 
@@ -55,6 +59,7 @@ namespace MyWeb
                 options.AllowAnyOrigin();
             });
              
+
             app.UseStaticFiles();
             app.UseCookiePolicy();
     
