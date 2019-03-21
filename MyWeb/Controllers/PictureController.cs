@@ -139,7 +139,7 @@ namespace MyWeb.Controllers
                 {
                     return Json(Return_Helper_DG.Error_Msg_Ecode_Elevel_HttpCode("图片总共大小不能超过 100MB "));
                 }
-
+                string fileFullNamec ="";
                 List<string> filePathResultList = new List<string>();
 
                 foreach (var file in files)
@@ -163,6 +163,7 @@ namespace MyWeb.Controllers
                     fileName = Guid.NewGuid() + "." + suffix;
 
                     string fileFullName = filePath + fileName;
+                    fileFullNamec = "/src/Pictures/" + fileName;
                     var entit = new Img();
                     entit.Id = Guid.NewGuid();
                     entit.UserInfoId = Guid.Parse(ImgId);
@@ -181,7 +182,7 @@ namespace MyWeb.Controllers
 
                 string message = $"上传成功";
 
-                return Json(Return_Helper_DG.Success_Msg_Data_DCount_HttpCode(message, filePathResultList, filePathResultList.Count));
+                return Json(fileFullNamec)/*Return_Helper_DG.Success_Msg_Data_DCount_HttpCode(message, filePathResultList, filePathResultList.Count)*/;
             }
             catch (Exception e)
             {
