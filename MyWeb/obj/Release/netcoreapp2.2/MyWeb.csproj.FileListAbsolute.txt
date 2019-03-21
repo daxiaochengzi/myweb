@@ -1,3 +1,4 @@
+E:\work\webgit\MyWeb\bin\Release\netcoreapp2.2\Dockerfile
 E:\work\webgit\MyWeb\bin\Release\netcoreapp2.2\MyWeb.deps.json
 E:\work\webgit\MyWeb\bin\Release\netcoreapp2.2\MyWeb.runtimeconfig.json
 E:\work\webgit\MyWeb\bin\Release\netcoreapp2.2\MyWeb.runtimeconfig.dev.json
@@ -25,4 +26,3 @@ E:\work\webgit\MyWeb\obj\Release\netcoreapp2.2\MyWeb.Views.pdb
 E:\work\webgit\MyWeb\obj\Release\netcoreapp2.2\MyWeb.csproj.CopyComplete
 E:\work\webgit\MyWeb\obj\Release\netcoreapp2.2\MyWeb.dll
 E:\work\webgit\MyWeb\obj\Release\netcoreapp2.2\MyWeb.pdb
-E:\work\webgit\MyWeb\bin\Release\netcoreapp2.2\Dockerfile
