@@ -128,7 +128,7 @@ namespace service
         public List<string> GetImg(string UserInfoId)
         {
             var result = new List<string>();
-            string strsql = $"select  url from  img where UserInfoId=N'{UserInfoId}' order by CreateTime desc limit 4 offset 0";
+            string strsql = $"select  url from  img where UserInfoId='{UserInfoId}' order by CreateTime desc limit 4 offset 0";
             var dt = SQLiteHelper.ExecuteDataTable(strsql);
 
             if (dt.Rows.Count > 0)
@@ -160,7 +160,7 @@ namespace service
         public UserInfoDto GetUserInfo(string UserInfoId)
         {
             string strsql = string.Format(@"select a.Id,a.Address,a.UserName, a.Phone, a.Address ,a.MakeRoomTime ,a.SellingPoint,a.RoomNumber,a.Price,a.AllPrice,a.Areas,a.Apartment,a.Remark
-          from UserInfo as a where  a.id=N'{0}'", UserInfoId);
+          from UserInfo as a where  a.id='{0}'", UserInfoId);
             var dt = SQLiteHelper.ExecuteDataTable(strsql);
             var userData =new  UserInfoDto();
             if (dt.Rows.Count > 0)
