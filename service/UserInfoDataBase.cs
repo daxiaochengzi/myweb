@@ -122,7 +122,7 @@ namespace service
 
         public void AddImg(Img Param)
         {
-            string sqlStr = $" insert into img values(N'{Param.Id}',N'{Param.UserInfoId}',N'{Param.Type}',N'{Param.Url}',N'{Param.CreateTime}','')";
+            string sqlStr = $" insert into img values('{Param.Id}','{Param.UserInfoId}','{Param.Type}','{Param.Url}','{DateTime.Now.ToString("yyyy - MM - dd HH: mm: ss: ffff")}','')";
             var dt = SQLiteHelper.ExecuteDataTable(sqlStr);
         }
         public List<string> GetImg(string UserInfoId)
