@@ -127,12 +127,19 @@ function Btn_Click() {
         contentType: false,
         processData: false,
         data: data,
-        success: function () {
+        success: function (datac) {
+            console.log(datac);
             $("#uploadForm").css('display', 'none'); 
             toastr.success("上传成功!!!");
         },
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-            toastr.error(XMLHttpRequest.responseText);
+        error: function (XMLHttpRequest, textStatus) {
+            // 状态码
+            console.log(XMLHttpRequest.status);
+            // 状态
+            console.log(XMLHttpRequest.readyState);
+            // 错误信息   
+            console.log(textStatus);
+       
         } 
     
     });
