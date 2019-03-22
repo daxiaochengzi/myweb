@@ -175,7 +175,7 @@ namespace MyWeb.Controllers
                 {
                     var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
 
-                    string filePath = hostingEnv.WebRootPath + "//Files//Pictures//";
+                    string filePath = hostingEnv.WebRootPath + @"/Files/Pictures//";
 
                     if (!Directory.Exists(filePath))
                     {
@@ -198,7 +198,7 @@ namespace MyWeb.Controllers
                     entit.UserInfoId = Guid.Parse(ImgId);
                     entit.CreateTime = DateTime.Now;
                     entit.Type = Convert.ToInt16(Imgtype);
-                    entit.Url = fileFullName;
+                    entit.Url = fileName;
                     //保存数据
                     userData.AddImg(entit);
                     using (FileStream fs = System.IO.File.Create(fileFullName))

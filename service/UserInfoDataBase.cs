@@ -9,7 +9,9 @@ namespace service
 {
     public class UserInfoDataBase
     {
-     
+        public string Strurl = "/Files/Pictures/";
+
+
         public Dictionary<int, List<UserInfoDto>> pageList(UserInfoPagedDto parm)
         {
 
@@ -68,7 +70,7 @@ namespace service
                         RoomNumber = dr["RoomNumber"].ToString(),
                         SellingPoint = dr["SellingPoint"].ToString(),
                         MakeRoomTime = dr["MakeRoomTime"].ToString(),
-                        Url =  dr["url"].ToString()
+                        Url = Strurl+  dr["url"].ToString()
                     };
                     userData.Add(item);
                 }
@@ -95,8 +97,8 @@ namespace service
             {
                 foreach (DataRow dr in dt.Rows)
                 {
-                    var Strurl = dr["url"].ToString();
-                    result.Add(Strurl);
+                    var Strurls = Strurl+ dr["url"].ToString();
+                    result.Add(Strurls);
                 }
             }
             if (dt.Rows.Count < 4)
@@ -105,7 +107,7 @@ namespace service
                 {
                     if (dt.Rows.Count > 0)
                     {
-                        result.Add(dt.Rows[0]["url"].ToString());
+                        result.Add(Strurl+dt.Rows[0]["url"].ToString());
                     }
                     else
                     {
