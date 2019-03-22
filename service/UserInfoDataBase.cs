@@ -135,7 +135,7 @@ namespace service
             {
                 foreach (DataRow dr in dt.Rows)
                 {
-                    var Strurl = "/Files/Pictures/" + dr["url"].ToString();
+                    var Strurl = dr["url"].ToString();
                     result.Add(Strurl);
                 }
             }
@@ -145,7 +145,7 @@ namespace service
                 {
                     if (dt.Rows.Count > 0)
                     {
-                        result.Add("/Files/Pictures/"+dt.Rows[0]["url"].ToString());
+                        result.Add(dt.Rows[0]["url"].ToString());
                     }
                     else
                     {
