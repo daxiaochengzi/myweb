@@ -162,20 +162,20 @@ namespace MyWeb.Controllers
                 List<string> filePathResultList = new List<string>();
                 string filePathd = hostingEnv.WebRootPath;
                 //+ $@"\Files\Pictures\";
-                if (!System.IO.Directory.Exists(filePathd + "\\Files"))
+                if (!System.IO.Directory.Exists(filePathd + "//Files"))
                 {
-                    System.IO.Directory.CreateDirectory(filePathd + "\\Files");
+                    System.IO.Directory.CreateDirectory(filePathd + "//Files");
                 }
-                if (!System.IO.Directory.Exists(filePathd + "\\Files\\Picture\\"))
+                if (!System.IO.Directory.Exists(filePathd + "//Files//Picture//"))
                 {
-                    System.IO.Directory.CreateDirectory(filePathd + "\\Files\\Pictures\\");
+                    System.IO.Directory.CreateDirectory(filePathd + "//Files//Pictures//");
                 }
 
                 foreach (var file in files)
                 {
                     var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
 
-                    string filePath = hostingEnv.WebRootPath + "\\Files\\Pictures\\";
+                    string filePath = hostingEnv.WebRootPath + "//Files//Pictures//";
 
                     if (!Directory.Exists(filePath))
                     {
@@ -189,7 +189,7 @@ namespace MyWeb.Controllers
                         return Json(Return_Helper_DG.Error_Msg_Ecode_Elevel_HttpCode("当前图片格式不支持"));
                     }
 
-                    fileName = DateTime.Now.ToString("yyyyMMddHHmmssffff") + "." + suffix;
+                    fileName = DateTime.Now.ToString("yyyyMMddHHmmssffff").Replace('0','1') + "." + suffix;
 
                     string fileFullName = filePath + fileName;
               
