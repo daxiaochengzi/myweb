@@ -198,7 +198,7 @@ namespace MyWeb.Controllers
                     entit.UserInfoId = Guid.Parse(ImgId);
                     entit.CreateTime = DateTime.Now;
                     entit.Type = Convert.ToInt16(Imgtype);
-                    entit.Url = fileName;
+                    entit.Url = "/Files/Pictures/" +fileName;
                     //保存数据
                     userData.AddImg(entit);
                     using (FileStream fs = System.IO.File.Create(fileFullName))
