@@ -9,47 +9,7 @@ namespace service
 {
     public class UserInfoDataBase
     {
-        public string pageListstr(UserInfoPagedDto parm)
-        {
-            string sqls = string.Format(@"select a.Id,a.Address,a.UserName, a.Phone, a.Address,a.CreateTime ,a.MakeRoomTime ,a.SellingPoint,a.RoomNumber,a.Price,a.AllPrice,a.Areas,a.Apartment,a.Remark
-                  ,(select  Url from img where UserInfoId = a.id order by CreateTime desc limit 1 offset 0) as url from UserInfo as a where a.Id is not null");
-            string sqlCount = "select count(*) from UserInfo where Id  is not null";
-            string sqlwhere = null;
-            //if (strRegionIds != null)
-            //{
-            //    strsql = strRegionIds + strsql;
-            //    sqlCount = strRegionIds + sqlCount;
-            //    sqlwhere += " and exists(select RegionId from RegionIds where RegionId =c.RegionId)";
-            //}
-            if (!string.IsNullOrWhiteSpace(parm.Address))
-            {
-                sqlwhere += $" and Address like N'" + parm.Address + "%'";
-            }
-            if (!string.IsNullOrWhiteSpace(parm.UserName))
-            {
-                sqlwhere += $" and UserName like  N'" + parm.UserName + "%'";
-            }
-            if (!string.IsNullOrWhiteSpace(parm.Apartment))
-            {
-                sqlwhere += " and Apartment like  N'" + parm.Apartment + "%'";
-            }
-            if (!string.IsNullOrWhiteSpace(parm.Keywords))
-            {
-                sqlwhere += $" and (SellingPoint like N'" + parm.Keywords + "%' or Apartment like   N'" + parm.Keywords + "%' )";
-            }
-            string sqlsize = "";
-            sqlCount += sqlwhere;
-            sqls += sqlwhere;
-            if (parm.limit != 0 && parm.offset > 0)
-            {
-                var skipCount = parm.limit * (parm.offset - 1);
-                sqlsize = string.Format(" order by CreateTime asc limit {0} offset {1}", parm.limit, skipCount);
-                sqls += sqlsize;
-            }
-
-            return sqls;
-        }
-
+     
         public Dictionary<int, List<UserInfoDto>> pageList(UserInfoPagedDto parm)
         {
 
@@ -66,19 +26,19 @@ namespace service
             //}
             if (!string.IsNullOrWhiteSpace(parm.Address))
             {
-                sqlwhere += $" and Address like N'" + parm.Address + "%'";
+                sqlwhere += $" and Address like '" + parm.Address + "%'";
             }
             if (!string.IsNullOrWhiteSpace(parm.UserName))
             {
-                sqlwhere += $" and UserName like  N'" + parm.UserName + "%'";
+                sqlwhere += $" and UserName like  '" + parm.UserName + "%'";
             }
             if (!string.IsNullOrWhiteSpace(parm.Apartment))
             {
-                sqlwhere += " and Apartment like  N'" + parm.Apartment + "%'";
+                sqlwhere += " and Apartment like  '" + parm.Apartment + "%'";
             }
             if (!string.IsNullOrWhiteSpace(parm.Keywords))
             {
-                sqlwhere += $" and (SellingPoint like N'" + parm.Keywords + "%' or Apartment like   N'" + parm.Keywords + "%' )";
+                sqlwhere += $" and (SellingPoint like '" + parm.Keywords + "%' or Apartment like   '" + parm.Keywords + "%' )";
             }
             string sqlsize = "";
             sqlCount += sqlwhere;
@@ -122,7 +82,7 @@ namespace service
 
         public void AddImg(Img Param)
         {
-            string sqlStr = $" insert into img values('{Param.Id}','{Param.UserInfoId}','{Param.Type}','{Param.Url}','{DateTime.Now.ToString("yyyy - MM - dd HH: mm: ss: ffff")}','')";
+            string sqlStr = $" insert into img values('{Param.Id}','{Param.UserInfoId}','{Param.Type}','{Param.Url}','{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss:ffff")}','')";
             var dt = SQLiteHelper.ExecuteDataTable(sqlStr);
         }
         public List<string> GetImg(string UserInfoId)

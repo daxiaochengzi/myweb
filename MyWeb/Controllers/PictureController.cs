@@ -93,13 +93,7 @@ namespace MyWeb.Controllers
             return Json(new { total = total, rows = rows, index = param.offset });
         }
 
-        [HttpGet]
-        public IActionResult pageListstr([FromQuery] UserInfoPagedDto param)
-        {
-            var userData = new UserInfoDataBase();
-            var resultData = userData.pageListstr(param);
-            return Content(resultData);
-        }
+
 
         
         [HttpPost]
@@ -172,7 +166,7 @@ namespace MyWeb.Controllers
                         return Json(Return_Helper_DG.Error_Msg_Ecode_Elevel_HttpCode("当前图片格式不支持"));
                     }
 
-                    fileName = Guid.NewGuid() + "." + suffix;
+                    fileName = DateTime.Now.ToString("yyyyMMddHHmmssffff") + "." + suffix;
 
                     string fileFullName = filePath + fileName;
               
