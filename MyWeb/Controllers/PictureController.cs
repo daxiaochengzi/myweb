@@ -28,6 +28,7 @@ namespace MyWeb.Controllers
 
         public IActionResult Index()
         {
+            
             return View();
         }
         public IActionResult CreateTable()
@@ -142,6 +143,16 @@ namespace MyWeb.Controllers
                 }
              
                 List<string> filePathResultList = new List<string>();
+                string filePathd = hostingEnv.WebRootPath;
+                //+ $@"\Files\Pictures\";
+                if (!System.IO.Directory.Exists(filePathd + "\\Files"))
+                {
+                    System.IO.Directory.CreateDirectory(filePathd + "\\Files");
+                }
+                if (!System.IO.Directory.Exists(filePathd + "\\Files\\Picture\\"))
+                {
+                    System.IO.Directory.CreateDirectory(filePathd + "\\Files\\Pictures\\");
+                }
 
                 foreach (var file in files)
                 {

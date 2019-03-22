@@ -74,3 +74,4 @@ E:\work\webgit\service\obj\Debug\netcoreapp2.2\service.AssemblyInfoInputs.cache
 E:\work\webgit\service\obj\Debug\netcoreapp2.2\service.AssemblyInfo.cs
 E:\work\webgit\service\obj\Debug\netcoreapp2.2\service.dll
 E:\work\webgit\service\obj\Debug\netcoreapp2.2\service.pdb
+E:\work\webgit\service\obj\Debug\netcoreapp2.2\service.csprojAssemblyReference.cache
