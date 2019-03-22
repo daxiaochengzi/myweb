@@ -93,9 +93,32 @@ namespace MyWeb.Controllers
             return Json(new { total = total, rows = rows, index = param.offset });
         }
 
+        [HttpGet]
+        public IActionResult GetUrl(string url)
+        {
+            string result = "不存在";
+            string filePathd = hostingEnv.WebRootPath;
+          
+            if  (!string.IsNullOrWhiteSpace(url))
+            {
+                if (System.IO.Directory.Exists(filePathd + "\\Files\\Picture\\"+ url))
+                {
+                    result = "存在";
+                }
+            }
+            else
+            {
+                if (System.IO.Directory.Exists(filePathd + "\\Files\\Picture\\"))
+                {
+                    result = "存在";
+                }
+            }
+
+            return Content(result);
+        }
 
 
-        
+
         [HttpPost]
         public IActionResult Remove([FromBody]RemoveParam param)
         {
@@ -106,7 +129,7 @@ namespace MyWeb.Controllers
             }
             else
             {
-                string strsql = $"delete FROM UserInfo where Id= N'{param.Id}'";
+                string strsql = $"delete FROM UserInfo where Id= '{param.Id}'";
                 var dataCount = SQLiteHelper.ExecuteNonQuery(strsql);
                 if (dataCount > 0)
                 {
@@ -152,7 +175,7 @@ namespace MyWeb.Controllers
                 {
                     var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
 
-                    string filePath = hostingEnv.WebRootPath + $@"\Files\Pictures\";
+                    string filePath = hostingEnv.WebRootPath + "\\Files\\Pictures\\";
 
                     if (!Directory.Exists(filePath))
                     {

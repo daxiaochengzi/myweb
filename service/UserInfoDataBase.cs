@@ -68,7 +68,7 @@ namespace service
                         RoomNumber = dr["RoomNumber"].ToString(),
                         SellingPoint = dr["SellingPoint"].ToString(),
                         MakeRoomTime = dr["MakeRoomTime"].ToString(),
-                        Url = dr["url"].ToString()
+                        Url =  dr["url"].ToString()
                     };
                     userData.Add(item);
                 }
