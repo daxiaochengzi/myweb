@@ -126,20 +126,7 @@ namespace MyWeb.Controllers
         [HttpPost]
         public IActionResult UpImg([FromForm]IFormCollection formData)
         {
-            //string result = "进无";
-            //IFormFileCollection files = formData.Files;
-            //   long size = files.Sum(f => f.Length);
-            //   if (size > 0)
-            //   {
-            //       result = "有1";
-            //   }
-
-            //   foreach (var file in files)
-            //   {
-            //       result = "有1";
-            //   }
-
-            //   return Json(result);
+            
             try
             {
                 IFormFileCollection files = formData.Files;
@@ -153,7 +140,7 @@ namespace MyWeb.Controllers
                 {
                     return Json(Return_Helper_DG.Error_Msg_Ecode_Elevel_HttpCode("图片总共大小不能超过 100MB "));
                 }
-                string fileFullNamec = "";
+             
                 List<string> filePathResultList = new List<string>();
 
                 foreach (var file in files)
@@ -177,13 +164,13 @@ namespace MyWeb.Controllers
                     fileName = Guid.NewGuid() + "." + suffix;
 
                     string fileFullName = filePath + fileName;
-                    fileFullNamec = "/src/Pictures/" + fileName;
+              
                     var entit = new Img();
                     entit.Id = Guid.NewGuid();
                     entit.UserInfoId = Guid.Parse(ImgId);
                     entit.CreateTime = DateTime.Now;
                     entit.Type = Convert.ToInt16(Imgtype);
-                    entit.Url = fileName;
+                    entit.Url = fileFullName;
                     //保存数据
                     userData.AddImg(entit);
                     using (FileStream fs = System.IO.File.Create(fileFullName))
@@ -191,12 +178,12 @@ namespace MyWeb.Controllers
                         file.CopyTo(fs);
                         fs.Flush();
                     }
-                    filePathResultList.Add($"/src/Pictures/{fileName}");
+                    filePathResultList.Add(fileFullName);
                 }
 
                 string message = $"上传成功";
 
-                return Json(fileFullNamec)/*Return_Helper_DG.Success_Msg_Data_DCount_HttpCode(message, filePathResultList, filePathResultList.Count)*/;
+           return   Json(Return_Helper_DG.Success_Msg_Data_DCount_HttpCode(message, filePathResultList, filePathResultList.Count))  ;
             }
             catch (Exception e)
             {
